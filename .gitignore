@@ -1,0 +1,36 @@
+node_modules
+
+# next.js
+.next/
+out/
+next-env.d.ts
+
+# generated
+script/**/*.generated.*
+script/**/*.webp
+src/web/data/projects.ts
+public/files/GervinFungDaXuen-Résumé.pdf
+
+# production
+build
+dist
+cache
+
+# local env files
+.env
+.env.development
+.env.testing
+.env.productions
+.env.staging
+
+# vercel
+.vercel
+
+# sitemap
+public/sitemap*.xml
+public/site.webmanifest
+public/robots.txt
+
+# font
+public/font
+src/web/css/font.css
