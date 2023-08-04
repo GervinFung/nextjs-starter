@@ -1,14 +1,9 @@
 import child from 'child_process';
-import config from '../config';
 
 export default class Server {
-    private readonly port: number;
+    private constructor(private readonly port: number) {}
 
-    private constructor() {
-        this.port = config().port;
-    }
-
-    static create = () => new this();
+    static readonly of = (port: number) => new this(port);
 
     getPort = () => this.port;
 

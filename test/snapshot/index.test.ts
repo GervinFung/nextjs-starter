@@ -5,7 +5,7 @@ import Server from '../server';
 import { getWebSnapshot } from './browser';
 
 const testSnapshot = () => {
-    const server = Server.create();
+    const server = Server.of(8080);
     let browser: undefined | puppeteer.Browser = undefined;
 
     beforeAll(async () => {

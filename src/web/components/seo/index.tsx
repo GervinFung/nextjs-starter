@@ -1,8 +1,6 @@
 import React from 'react';
 import { DefaultSeo } from 'next-seo';
 import Schema from './schema';
-import Head from 'next/head';
-import { guard } from '../../../common/type';
 
 const Seo = (
     props: Readonly<{
@@ -21,41 +19,9 @@ const Seo = (
 
     const { description } = props;
 
-    const env = process.env.NEXT_PUBLIC_NODE_ENV;
-
     return (
         <>
             <Schema />
-            <Head>
-                {env !== 'production' && env !== 'development'
-                    ? null
-                    : (() => {
-                          const gaMeasurementId = guard({
-                              value: process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID,
-                              error: () =>
-                                  new Error(
-                                      'NEXT_PUBLIC_GA_MEASUREMENT_ID is undefined'
-                                  ),
-                          });
-
-                          return (
-                              <>
-                                  <script
-                                      async
-                                      src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}
-                                  />
-                                  <script>
-                                      {[
-                                          'window.dataLayer = window.dataLayer || []',
-                                          'function gtag(){window.dataLayer.push(arguments);}',
-                                          `gtag('js', new Date())`,
-                                          `gtag('config', '${gaMeasurementId}', {page_path: window.location.pathname})`,
-                                      ].join('\n')}
-                                  </script>
-                              </>
-                          );
-                      })()}
-            </Head>
             <DefaultSeo
                 title={title}
                 canonical={url}
