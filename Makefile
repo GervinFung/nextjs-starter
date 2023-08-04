@@ -1,18 +1,16 @@
 .PHONY: build test
 MAKEFLAGS += --silent
 
-NODE_BIN=node_modules/.bin/
-VITE_NODE=$(NODE_BIN)vite-node
-NEXT=$(NODE_BIN)next
+NEXT=pnpm next
 
 ## generate
 generate: generate-webmanifest generate-sitemap
 
 generate-webmanifest:
-	$(VITE_NODE) script/site/webmanifest.ts
+	pnpm script/site/webmanifest.ts
 
 generate-sitemap:
-	$(NODE_BIN)next-sitemap
+	pnpm next-sitemap
 
 ## deployment
 deploy-staging: build-staging
@@ -32,13 +30,13 @@ start-staging: clear-cache start
 start-production: clear-cache start
 
 ## build
-build-development: clear-cache copy-env-development build
+build-development: clear-cache build
 
-build-production: clear-cache copy-env-production build generate
+build-production: clear-cache build generate
 
-build-staging: clear-cache copy-env-staging build
+build-staging: clear-cache build
 
-build-testing: clear-cache copy-env-testing build
+build-testing: clear-cache build
 
 build:
 	$(NEXT) build
@@ -49,7 +47,7 @@ start:
 
 ## format
 prettify:
-	$(NODE_BIN)prettier --ignore-path .gitignore  --$(type) src/ test/ script/
+	pnpm prettier --ignore-path .gitignore --$(type) **/*.{mjs,tsx,ts,json,md}
 
 format-check:
 	make prettify type=check
@@ -59,28 +57,15 @@ format:
 
 ## lint
 lint:
-	$(NODE_BIN)eslint src/ test/ -f='stylish' --color &&\
-		make find-unused-exports &&\
-		make find-unimported-files
-
-## find unused exports
-find-unused-exports:
-	$(NODE_BIN)find-unused-exports
-
-## find unimported files
-find-unimported-files:
-	$(NODE_BIN)unimported
+	pnpm eslint src/ test/ -f='stylish' --color && pnpm knip
 
 ## typecheck
 typecheck:
-	$(NODE_BIN)tsc -p tsconfig.json $(arguments) 
-
-typecheck-watch:
-	make typecheck arguments=--w
+	pnpm tsc -p tsconfig.json $(arguments) 
 
 ## test
 test-type:
-	$(NODE_BIN)vitest test/$(path)/**.test.ts $(arguments)
+	pnpm vitest test/$(path)/**.test.ts $(arguments)
 
 test-unit:
 	make test-type path="unit" arguments="$(arguments)"

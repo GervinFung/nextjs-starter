@@ -2,7 +2,7 @@ import { beforeAll, afterAll, describe } from 'vitest';
 import Server from '../server';
 
 const testIntegration = () => {
-    const server = Server.create();
+    const server = Server.of(8080);
     beforeAll(async () => {
         await server.start();
     });
