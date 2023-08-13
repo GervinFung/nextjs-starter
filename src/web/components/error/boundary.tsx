@@ -5,46 +5,46 @@ import { withRouter } from 'next/router';
 import type { NextRouter } from 'next/router';
 
 type State = Readonly<{
-    closedAlert: boolean;
-    error: Error | undefined;
+	closedAlert: boolean;
+	error: Error | undefined;
 }>;
 
 class ErrorBoundary extends React.Component<
-    Readonly<{
-        router: NextRouter;
-        children: React.ReactNode;
-    }>,
-    State
+	Readonly<{
+		router: NextRouter;
+		children: React.ReactNode;
+	}>,
+	State
 > {
-    state: State = {
-        error: undefined,
-        closedAlert: false,
-    };
+	state: State = {
+		error: undefined,
+		closedAlert: false,
+	};
 
-    static getDerivedStateFromError = (error: Error): State => ({
-        error,
-        closedAlert: false,
-    });
+	static getDerivedStateFromError = (error: Error): State => ({
+		error,
+		closedAlert: false,
+	});
 
-    componentDidCatch = (error: Error, errorInfo: React.ErrorInfo) => {
-        console.error({ error, errorInfo });
-        this.setState({ error });
-    };
+	componentDidCatch = (error: Error, errorInfo: React.ErrorInfo) => {
+		console.error({ error, errorInfo });
+		this.setState({ error });
+	};
 
-    render = (): JSX.Element | React.ReactNode =>
-        !this.state.error ? (
-            this.props.children
-        ) : (
-            <Layout>
-                <Head>
-                    <title>Error</title>
-                </Head>
-                {this.state.closedAlert ? null : (
-                    //something
-                    <div>error</div>
-                )}
-            </Layout>
-        );
+	render = (): JSX.Element | React.ReactNode =>
+		!this.state.error ? (
+			this.props.children
+		) : (
+			<Layout>
+				<Head>
+					<title>Error</title>
+				</Head>
+				{this.state.closedAlert ? null : (
+					//something
+					<div>error</div>
+				)}
+			</Layout>
+		);
 }
 
 export default withRouter(ErrorBoundary);
