@@ -17,8 +17,8 @@ const config: KnipConfig = {
 		'vite-node',
 		'next-sitemap',
 		'prettier',
+		'@poolofdeath20/prettier-config-generator',
 		'eslint',
-		'@poolofdeath20/eslint-config',
 	],
 };
 
