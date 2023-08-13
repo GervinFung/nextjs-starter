@@ -31,3 +31,4 @@ public/site.webmanifest
 public/robots.txt
 
 pnpm-lock.yaml
+.pnpm-store
