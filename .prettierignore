@@ -29,3 +29,5 @@ cache
 public/sitemap*.xml
 public/site.webmanifest
 public/robots.txt
+
+pnpm-lock.yaml

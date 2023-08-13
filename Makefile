@@ -1,13 +1,15 @@
 .PHONY: build test
 MAKEFLAGS += --silent
 
-NEXT=pnpm next
+## telemetry
+opt-out-telemetry:
+	pnpm next telemetry disable
 
 ## generate
 generate: generate-webmanifest generate-sitemap
 
 generate-webmanifest:
-	pnpm script/site/webmanifest.ts
+	pnpm vite-node script/site/webmanifest.ts
 
 generate-sitemap:
 	pnpm next-sitemap
@@ -22,12 +24,13 @@ deploy-production: build-production
 clear-cache:
 	rm -rf .next
 
-start-development: clear-cache
-	$(NEXT) dev
+start-development: clear-cache dev
 
-start-staging: clear-cache start
+start-testing: clear-cache dev
 
-start-production: clear-cache start
+start-staging: clear-cache dev
+
+start-production: clear-cache dev
 
 ## build
 build-development: clear-cache build
@@ -39,25 +42,32 @@ build-staging: clear-cache build
 build-testing: clear-cache build
 
 build:
-	$(NEXT) build
+	pnpm next build
 
 ## start
 start:
-	$(NEXT) start $(arguments)
+	pnpm next start $(arguments)
+
+## dev
+dev:
+	pnppm next dev
 
 ## format
-prettify:
-	pnpm prettier --ignore-path .gitignore --$(type) **/*.{mjs,tsx,ts,json,md}
-
-format-check:
-	make prettify type=check
+format-generate-config:
+	pnpm prettier-config-generate
 
 format:
-	make prettify type=write
+	pnpm prettier --$(type) .
+
+format-check:
+	make format type=check
+
+format-write:
+	make format type=write
 
 ## lint
 lint:
-	pnpm eslint src/ test/ -f='stylish' --color && pnpm knip
+	pnpm eslint --ignore-path .gitignore --ext .mjs,.tsx,.ts --color && pnpm knip
 
 ## typecheck
 typecheck:
@@ -76,4 +86,4 @@ test-integration:
 test-snapshot:
 	make test-type path="snapshot" arguments="$(arguments)"
 
-test: test-unit build-testing test-integration test-snapshot
+test: build-testing test-unit test-integration test-snapshot
