@@ -13,7 +13,13 @@ const config: KnipConfig = {
 		'script/env/copy.ts',
 		'script/site/webmanifest.ts',
 	],
-	ignoreDependencies: ['vite-node', 'next-sitemap', 'prettier'],
+	ignoreDependencies: [
+		'vite-node',
+		'next-sitemap',
+		'prettier',
+		'eslint',
+		'@poolofdeath20/eslint-config',
+	],
 };
 
 export default config;
