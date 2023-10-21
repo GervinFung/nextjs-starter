@@ -21,18 +21,20 @@ class ErrorBoundary extends React.Component<
 		closedAlert: false,
 	};
 
-	static getDerivedStateFromError = (error: Error): State => ({
-		error,
-		closedAlert: false,
-	});
+	static getDerivedStateFromError = (error: Error): State => {
+		return {
+			error,
+			closedAlert: false,
+		};
+	};
 
 	componentDidCatch = (error: Error, errorInfo: React.ErrorInfo) => {
 		console.error({ error, errorInfo });
 		this.setState({ error });
 	};
 
-	render = (): JSX.Element | React.ReactNode =>
-		!this.state.error ? (
+	render = () => {
+		return !this.state.error ? (
 			this.props.children
 		) : (
 			<Layout>
@@ -45,6 +47,7 @@ class ErrorBoundary extends React.Component<
 				)}
 			</Layout>
 		);
+	};
 }
 
 export default withRouter(ErrorBoundary);

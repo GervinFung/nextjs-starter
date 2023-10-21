@@ -50,7 +50,7 @@ start:
 
 ## dev
 dev:
-	pnppm next dev
+	pnpm next dev
 
 ## format
 format-generate-config:

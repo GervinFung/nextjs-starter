@@ -15,28 +15,34 @@ export default class Doc extends Document {
 		context.renderPage = () =>
 			originalRenderPage({
 				// Useful for wrapping the whole react tree
-				enhanceApp: (App) => App,
+				enhanceApp: (App) => {
+					return App;
+				},
 				// Useful for wrapping in a per-page basis
-				enhanceComponent: (Component) => Component,
+				enhanceComponent: (Component) => {
+					return Component;
+				},
 			});
 
 		// Run the parent `getInitialProps`, it now includes the custom `renderPage`
 		return await Document.getInitialProps(context);
 	};
 
-	render = () => (
-		<Html lang="en">
-			<Head />
-			<body
-				style={{
-					padding: 0,
-					margin: 0,
-					overflowX: 'hidden',
-				}}
-			>
-				<Main />
-				<NextScript />
-			</body>
-		</Html>
-	);
+	render = () => {
+		return (
+			<Html lang="en">
+				<Head />
+				<body
+					style={{
+						padding: 0,
+						margin: 0,
+						overflowX: 'hidden',
+					}}
+				>
+					<Main />
+					<NextScript />
+				</body>
+			</Html>
+		);
+	};
 }

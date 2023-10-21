@@ -1,7 +1,7 @@
 import fs from 'fs';
 import ci from 'ci-info';
 import { defineConfig } from 'vitest/config';
-import { guard } from './src/common/type';
+import { Optional } from '@poolofdeath20/util';
 
 export default defineConfig(() => {
 	const timeOut = 300_000;
@@ -25,10 +25,7 @@ export default defineConfig(() => {
 							const [key, value] = keyValuePair.split('=');
 							return {
 								...prev,
-								[guard({
-									value: key,
-									error: () => new Error('key is undefined'),
-								})]: value,
+								[Optional.from(key).unwrap()]: value,
 							};
 						}, {}),
 		},
