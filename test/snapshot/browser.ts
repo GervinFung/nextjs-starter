@@ -1,3 +1,4 @@
+import { sleepInSeconds } from '@poolofdeath20/util';
 import type { Browser } from 'puppeteer';
 
 const getWebSnapshot = async (
@@ -32,7 +33,9 @@ const getWebSnapshot = async (
 		}`
 	);
 
-	await new Promise((resolve) => setTimeout(resolve, 2 * 1000));
+	await sleepInSeconds({
+		seconds: 2,
+	});
 
 	return {
 		link: param.link,

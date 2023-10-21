@@ -4,10 +4,14 @@
 	"author": "PoolOfDeath20",
 	"private": true,
 	"description": "",
+	"scripts": {
+		"postinstall": "pnpm prettier-config-generate"
+	},
 	"dependencies": {
 		"@chakra-ui/react": "^2.8.0",
 		"@emotion/react": "^11.11.1",
 		"@emotion/styled": "^11.11.0",
+		"@poolofdeath20/util": "^0.4.0",
 		"cors": "^2.8.5",
 		"next": "^13.4.13",
 		"next-seo": "^6.1.0",

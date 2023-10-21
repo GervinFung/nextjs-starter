@@ -5,7 +5,9 @@ export default class Server {
 
 	static readonly of = (port: number) => new this(port);
 
-	getPort = () => this.port;
+	getPort = () => {
+		return this.port;
+	};
 
 	kill = () => {
 		child.exec(`kill $(lsof -t -i:${this.port})`);
@@ -20,12 +22,13 @@ export default class Server {
 			.on('kill', () => {
 				this.kill();
 			});
+
 		server.stdout?.setEncoding('utf-8');
 		server.stderr?.setEncoding('utf-8');
+
 		await new Promise<void>((resolve) => {
 			server.stdout?.on('data', (data: string) => {
-				console.log(data);
-				if (data.includes('started server')) {
+				if (data.includes(`${this.port}`)) {
 					resolve();
 				}
 			});

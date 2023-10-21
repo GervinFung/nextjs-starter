@@ -20,7 +20,7 @@ const Seo = (
 	const { description } = props;
 
 	return (
-		<>
+		<React.Fragment>
 			<Schema />
 			<DefaultSeo
 				title={title}
@@ -125,7 +125,7 @@ const Seo = (
 					}),
 				]}
 			/>
-		</>
+		</React.Fragment>
 	);
 };
 

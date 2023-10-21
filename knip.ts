@@ -6,20 +6,10 @@ const config: KnipConfig = {
 		'pages/**/*.tsx',
 		'src/**/*.tsx',
 		'src/**/*.ts',
-		'script/**/*.s',
+		'script/**/*.ts',
 	],
-	ignore: [
-		'next-sitemap.config.js',
-		'script/env/copy.ts',
-		'script/site/webmanifest.ts',
-	],
-	ignoreDependencies: [
-		'vite-node',
-		'next-sitemap',
-		'prettier',
-		'@poolofdeath20/prettier-config-generator',
-		'eslint',
-	],
+	ignore: ['next-sitemap.config.js'],
+	ignoreDependencies: ['vite-node', 'next-sitemap', 'prettier', 'eslint'],
 };
 
 export default config;
