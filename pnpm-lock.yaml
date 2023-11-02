@@ -15,8 +15,8 @@ dependencies:
     specifier: ^11.11.0
     version: 11.11.0(@emotion/react@11.11.1)(@types/react@18.2.34)(react@18.2.0)
   '@poolofdeath20/util':
-    specifier: ^0.5.1
-    version: 0.5.1
+    specifier: ^0.5.2
+    version: 0.5.2
   cors:
     specifier: ^2.8.5
     version: 2.8.5
@@ -3133,8 +3133,8 @@ packages:
       prettier: 3.0.3
     dev: true
 
-  /@poolofdeath20/util@0.5.1:
-    resolution: {integrity: sha512-0PzSHFq0/NQjSWCsLVSd9Q5oAUF97voxzXiptE7EuE1dBGZyIGIfAOXhxK4jYustlhCftQIwaXWoCNf1n3kEmg==}
+  /@poolofdeath20/util@0.5.2:
+    resolution: {integrity: sha512-qkLILtKFItRGO4HgXFJXtLZaj9EuMnNvkGLUna66dn+qgkJy0RfD7f1F+YfxmcQbre+NEyGUx0QBwbI9cNnLLA==}
     dev: false
 
   /@popperjs/core@2.11.8:
