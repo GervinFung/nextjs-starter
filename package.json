@@ -19,7 +19,7 @@
 		"react-dom": "^18.2.0"
 	},
 	"devDependencies": {
-		"@ducanh2912/next-pwa": "^9.7.2",
+		"@ducanh2912/next-pwa": "^10.0.0",
 		"@poolofdeath20/eslint-config": "^0.3.2",
 		"@poolofdeath20/prettier-config-generator": "^0.0.1",
 		"@types/cors": "^2.8.17",
@@ -38,7 +38,7 @@
 		"prettier": "^3.1.1",
 		"puppeteer": "^21.6.1",
 		"typescript": "^5.3.3",
-		"vite-node": "^0.34.7",
-		"vitest": "^0.34.6"
+		"vite-node": "^1.1.0",
+		"vitest": "^1.1.0"
 	}
 }
