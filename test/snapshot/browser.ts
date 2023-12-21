@@ -14,14 +14,14 @@ const getWebSnapshot = async (
 		param.platform === 'pc'
 			? { width: 1920, height: 1080 }
 			: param.platform === 'tablet'
-			  ? {
+				? {
 						width: 820,
 						height: 1180,
-			    }
-			  : {
+					}
+				: {
 						width: 375,
 						height: 667,
-			    }
+					}
 	);
 	await page.emulateMediaFeatures([
 		{ name: 'prefers-color-scheme', value: 'dark' },
