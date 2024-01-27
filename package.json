@@ -33,7 +33,7 @@
 		"eslint-plugin-jsx-a11y": "^6.8.0",
 		"eslint-plugin-react": "^7.33.2",
 		"jest-image-snapshot": "^6.4.0",
-		"knip": "^3.13.2",
+		"knip": "^4.2.1",
 		"next-sitemap": "^4.2.3",
 		"prettier": "^3.2.4",
 		"puppeteer": "^21.9.0",
