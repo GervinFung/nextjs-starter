@@ -24,8 +24,8 @@
 		"preserveWatchOutput": true,
 		"outDir": "build",
 		"allowJs": false,
-		"verbatimModuleSyntax": true
+		"verbatimModuleSyntax": true,
 	},
 	"include": ["*.d.ts", "**/*.ts", "**/.tsx"],
-	"exclude": ["node_modules"]
+	"exclude": ["node_modules"],
 }
