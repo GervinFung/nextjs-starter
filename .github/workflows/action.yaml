@@ -1,4 +1,4 @@
-name: my-web-ci-cd
+name: nextjs-starter-ci
 
 on: [push, pull_request]
 
