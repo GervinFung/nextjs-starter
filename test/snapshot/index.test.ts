@@ -12,7 +12,7 @@ const testSnapshot = () => {
 	beforeAll(async () => {
 		await server.start();
 		browser = await puppeteer.launch({
-			headless: 'new',
+			headless: true,
 			defaultViewport: null,
 			args: ['--start-maximized'],
 		});
