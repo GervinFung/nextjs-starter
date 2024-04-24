@@ -11,7 +11,7 @@
 		"@chakra-ui/react": "^2.8.2",
 		"@emotion/react": "^11.11.4",
 		"@emotion/styled": "^11.11.5",
-		"@poolofdeath20/util": "^0.7.1",
+		"@poolofdeath20/util": "^0.8.0",
 		"cors": "^2.8.5",
 		"next": "^14.2.2",
 		"next-seo": "^6.5.0",
