@@ -22,7 +22,7 @@
 		"@ducanh2912/next-pwa": "^10.2.8",
 		"@poolofdeath20/eslint-config": "^0.3.4",
 		"@poolofdeath20/prettier-config-generator": "^0.0.1",
-		"@poolofdeath20/tsconfig": "^0.0.0",
+		"@poolofdeath20/tsconfig": "^0.1.0",
 		"@types/cors": "^2.8.17",
 		"@types/jest-image-snapshot": "^6.4.0",
 		"@types/react": "^18.3.3",
@@ -30,7 +30,7 @@
 		"@typescript-eslint/eslint-plugin": "^7.17.0",
 		"@typescript-eslint/parser": "^7.17.0",
 		"ci-info": "^4.0.0",
-		"eslint": "^8.57.0",
+		"eslint": "^9.8.0",
 		"eslint-plugin-jsx-a11y": "^6.9.0",
 		"eslint-plugin-react": "^7.35.0",
 		"jest-image-snapshot": "^6.4.0",
@@ -39,7 +39,7 @@
 		"prettier": "^3.3.3",
 		"puppeteer": "^22.14.0",
 		"typescript": "^5.5.4",
-		"vite-node": "^1.6.0",
-		"vitest": "^1.6.0"
+		"vite-node": "^2.0.4",
+		"vitest": "^2.0.4"
 	}
 }
