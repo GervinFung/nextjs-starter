@@ -5,6 +5,10 @@ MAKEFLAGS += --silent
 opt-out-telemetry:
 	pnpm next telemetry disable
 
+## env
+generate-environment-type-definition:
+	pnpm vite-node script/env/type-def.ts
+
 ## generate
 generate: generate-webmanifest generate-sitemap
 

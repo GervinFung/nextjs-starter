@@ -9,7 +9,7 @@ const Seo = (
 		keywords: ReadonlyArray<string>;
 	}>
 ) => {
-	const url = process.env.ORIGIN;
+	const url = process.env.NEXT_PUBLIC_ORIGIN;
 	const iconPath = '/images/icons';
 	const dimensions = [72, 96, 128, 152, 192, 384, 512] as const;
 

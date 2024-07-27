@@ -21,7 +21,7 @@ const cors = <T>() =>
 	initMiddleware<Response<T>>(
 		Cors({
 			credentials: true,
-			origin: process.env.ORIGIN,
+			origin: process.env.NEXT_PUBLIC_ORIGIN,
 		})
 	);
 
