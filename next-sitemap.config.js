@@ -1,3 +1,5 @@
+const process = require('process');
+
 const config = () => {
 	const url = process.env.NEXT_PUBLIC_ORIGIN;
 

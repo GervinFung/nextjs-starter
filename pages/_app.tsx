@@ -1,7 +1,9 @@
-import React from 'react';
 import type { AppProps } from 'next/app';
-import ErrorBoundary from '../src/web/components/error/boundary';
+
 import { ChakraProvider } from '@chakra-ui/react';
+import React from 'react';
+
+import ErrorBoundary from '../src/web/components/error/boundary';
 import Layout from '../src/web/components/layout';
 
 const App = (props: AppProps) => {

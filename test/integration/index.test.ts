@@ -1,4 +1,5 @@
 import { beforeAll, afterAll, describe } from 'vitest';
+
 import Server from '../server';
 
 const testIntegration = () => {
@@ -8,6 +9,7 @@ const testIntegration = () => {
 		await server.start();
 	});
 
+	// eslint-disable-next-line @typescript-eslint/no-empty-function
 	describe('Integration Test', () => {});
 
 	afterAll(() => {

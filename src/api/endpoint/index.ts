@@ -1,5 +1,5 @@
+import type { DeepReadonly } from '@poolofdeath20/util';
 import type { NextApiRequest, NextApiResponse } from 'next';
-import type { DeepReadonly } from '../../common/type';
 
 type Response<T> = string | DeepReadonly<T>;
 

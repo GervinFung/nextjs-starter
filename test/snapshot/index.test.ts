@@ -1,13 +1,17 @@
-import * as puppeteer from 'puppeteer';
-import { beforeAll, afterAll, describe, it, expect } from 'vitest';
+import type { Browser } from 'puppeteer';
+
 import { toMatchImageSnapshot } from 'jest-image-snapshot';
+import puppeteer from 'puppeteer';
+import { beforeAll, afterAll, describe, it, expect } from 'vitest';
+
 import Server from '../server';
+
 import { getWebSnapshot } from './browser';
 
 const testSnapshot = () => {
 	const server = Server.of(8080);
 
-	let browser: undefined | puppeteer.Browser = undefined;
+	let browser: undefined | Browser = undefined;
 
 	beforeAll(async () => {
 		await server.start();
@@ -22,14 +26,16 @@ const testSnapshot = () => {
 		expect.extend({ toMatchImageSnapshot });
 
 		it.each(
-			(['pc', 'tablet', 'mobile'] as const).flatMap((platform) =>
-				(['home', 'projects', 'contact', 'error'] as const).map(
-					(link) => ({
-						platform,
-						link,
-					})
-				)
-			)
+			(['pc', 'tablet', 'mobile'] as const).flatMap((platform) => {
+				return (['home', 'projects', 'contact', 'error'] as const).map(
+					(link) => {
+						return {
+							platform,
+							link,
+						};
+					}
+				);
+			})
 		)(
 			'should detect that layout of $link looks decent on $platform',
 			async ({ link, platform }) => {
@@ -56,7 +62,7 @@ const testSnapshot = () => {
 
 	afterAll(() => {
 		server.kill();
-		browser?.close();
+		void browser?.close();
 	});
 };
 
