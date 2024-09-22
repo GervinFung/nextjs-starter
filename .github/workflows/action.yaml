@@ -30,6 +30,9 @@ jobs:
             - name: Generate Env Type Definitions
               run: make generate-environment-type-definition
 
+            - name: Create Environment Variable
+              run: make copy-env-testing
+
             - name: Lint code
               run: make lint
 

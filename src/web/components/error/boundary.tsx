@@ -33,11 +33,12 @@ class ErrorBoundary extends React.Component<Props, State> {
 	}
 
 	override shouldComponentUpdate(_: Props, nextState: State) {
-		return this.state.error?.message !== nextState.error?.message;
+		return nextState.error?.message !== this.state.error?.message;
 	}
 
 	override componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
 		console.error({ error, errorInfo });
+		// eslint-disable-next-line react/no-set-state
 		this.setState({ error });
 	}
 

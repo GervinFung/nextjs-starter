@@ -9,7 +9,14 @@ const config: KnipConfig = {
 		'script/**/*.ts',
 	],
 	ignore: ['next-sitemap.config.js'],
-	ignoreDependencies: ['vite-node', 'next-sitemap', 'prettier', 'eslint'],
+	ignoreDependencies: [
+		'vite-node',
+		'next-sitemap',
+		'eslint',
+		'@eslint/compat',
+		'@eslint/js',
+		'typescript-eslint',
+	],
 };
 
 export default config;
