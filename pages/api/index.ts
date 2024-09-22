@@ -1,5 +1,6 @@
-import cors from '../../src/api/cors';
 import type { EndPointFunc } from '../../src/api/endpoint';
+
+import cors from '../../src/api/cors';
 
 const contact: EndPointFunc<string> = async (request, response) => {
 	await cors<string>()(request, response);

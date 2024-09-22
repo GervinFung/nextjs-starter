@@ -1,5 +1,6 @@
-import ci from 'ci-info';
 import childProcess from 'child_process';
+
+import ci from 'ci-info';
 
 const main = () => {
 	const environment = process.argv.at(2) ?? ''.replace(/-/g, '');

@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Layout = (props: Readonly<{ children: React.ReactNode }>) => {
-	return <React.Fragment>{props.children}</React.Fragment>;
+	return props.children;
 };
 
 export default Layout;

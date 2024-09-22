@@ -9,6 +9,15 @@ opt-out-telemetry:
 generate-environment-type-definition:
 	pnpm vite-node script/env/type-def.ts
 
+copy-env:
+	cp config/.env.${environment} .env
+
+copy-env-development:
+	make copy-env environment="development"
+
+copy-env-testing:
+	make copy-env environment="testing"
+
 ## generate
 generate: generate-webmanifest generate-sitemap
 
@@ -28,22 +37,22 @@ deploy-production: build-production
 clear-cache:
 	rm -rf .next
 
-start-development: clear-cache dev
+start-development: copy-env-development clear-cache dev
 
-start-testing: clear-cache dev
+start-testing: copy-env-testing clear-cache dev
 
 start-staging: clear-cache dev
 
 start-production: clear-cache dev
 
 ## build
-build-development: clear-cache build
+build-development: copy-env-development clear-cache build
+
+build-testing: copy-env-testing clear-cache build
 
 build-production: clear-cache build generate
 
 build-staging: clear-cache build
-
-build-testing: clear-cache build
 
 build:
 	pnpm next build
@@ -71,7 +80,7 @@ format-write:
 
 ## lint
 lint:
-	pnpm eslint --ignore-path .gitignore --ext .mjs,.tsx,.ts --color && pnpm knip
+	pnpm eslint . --color && pnpm knip
 
 ## typecheck
 typecheck:

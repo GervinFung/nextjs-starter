@@ -1,4 +1,5 @@
 import fs from 'fs';
+
 import pkg from '../../package.json';
 
 const main = () => {
@@ -7,11 +8,13 @@ const main = () => {
 	const webmanifest = {
 		name: pkg.author,
 		short_name: pkg.author,
-		icons: dimensions.map((dimension) => ({
-			sizes: `${dimension}x${dimension}`,
-			src: `/images/icons/icon-${dimension}x${dimension}.png`,
-			type: 'image/png',
-		})),
+		icons: dimensions.map((dimension) => {
+			return {
+				sizes: `${dimension}x${dimension}`,
+				src: `/images/icons/icon-${dimension}x${dimension}.png`,
+				type: 'image/png',
+			};
+		}),
 		theme_color: 'site_color_unknown',
 		background_color: 'site_color_unknown',
 		display: 'standalone',
