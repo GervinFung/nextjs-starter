@@ -4,7 +4,7 @@ import Document, { Head, Main, NextScript, Html } from 'next/document';
 import React from 'react';
 
 export default class Doc extends Document {
-	static getInitialProps = async (context: DocumentContext) => {
+	static override async getInitialProps(context: DocumentContext) {
 		const { renderPage: originalRenderPage } = context;
 
 		// Run the React rendering logic synchronously
@@ -22,10 +22,10 @@ export default class Doc extends Document {
 		};
 
 		// Run the parent `getInitialProps`, it now includes the custom `renderPage`
-		return await Document.getInitialProps(context);
-	};
+		return await super.getInitialProps(context);
+	}
 
-	render = () => {
+	override render() {
 		return (
 			<Html lang="en">
 				<Head />
@@ -41,5 +41,5 @@ export default class Doc extends Document {
 				</body>
 			</Html>
 		);
-	};
+	}
 }

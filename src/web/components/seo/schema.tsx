@@ -10,7 +10,7 @@ const Schema = () => {
 				name,
 				'@type': 'ListItem',
 				position: 1,
-				item: `${process.env.DOMAIN}/${name === 'home' ? '' : name}`,
+				item: `${process.env.NEXT_PUBLIC_ORIGIN}/${name === 'home' ? '' : name}`,
 			};
 		}),
 	};
