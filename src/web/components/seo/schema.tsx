@@ -5,7 +5,7 @@ const Schema = () => {
 	const structuredData = {
 		'@context': 'https://schema.org',
 		'@type': 'BreadcrumbList',
-		itemListElement: (['home'] as const).map((name) => {
+		itemListElement: ['home'].map((name) => {
 			return {
 				name,
 				'@type': 'ListItem',
