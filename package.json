@@ -8,12 +8,12 @@
 		"postinstall": "pnpm prettier-config-generate"
 	},
 	"dependencies": {
-		"@chakra-ui/react": "^2.10.3",
+		"@chakra-ui/react": "^3.0.2",
 		"@emotion/react": "^11.13.3",
 		"@emotion/styled": "^11.13.0",
 		"@poolofdeath20/util": "^0.8.2",
 		"cors": "^2.8.5",
-		"next": "^14.2.16",
+		"next": "^15.0.2",
 		"next-seo": "^6.6.0",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1"
