@@ -26,3 +26,4 @@ env.d.ts
 public/sitemap*.xml
 public/site.webmanifest
 public/robots.txt
+public/**.js
