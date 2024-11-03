@@ -29,6 +29,7 @@ cache
 public/sitemap*.xml
 public/site.webmanifest
 public/robots.txt
+public/**.js
 
 pnpm-lock.yaml
 .pnpm-store
