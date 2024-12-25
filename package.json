@@ -8,34 +8,34 @@
 		"postinstall": "pnpm prettier-config-generate"
 	},
 	"dependencies": {
-		"@chakra-ui/react": "^3.0.2",
-		"@emotion/react": "^11.13.3",
+		"@chakra-ui/react": "^3.2.3",
+		"@emotion/react": "^11.14.0",
 		"@poolofdeath20/util": "^0.8.2",
 		"cors": "^2.8.5",
-		"next": "^15.0.2",
+		"next": "^15.1.2",
 		"next-seo": "^6.6.0",
-		"react": "^18.3.1",
-		"react-dom": "^18.3.1"
+		"react": "^19.0.0",
+		"react-dom": "^19.0.0"
 	},
 	"devDependencies": {
 		"@ducanh2912/next-pwa": "^10.2.9",
-		"@poolofdeath20/eslint-config": "^0.4.1",
+		"@poolofdeath20/eslint-config": "^0.4.2",
 		"@poolofdeath20/prettier-config-generator": "^0.0.1",
 		"@poolofdeath20/tsconfig": "^0.1.1",
 		"@types/cors": "^2.8.17",
 		"@types/jest-image-snapshot": "^6.4.0",
-		"@types/react": "^18.3.12",
-		"@types/react-dom": "^18.3.1",
-		"ci-info": "^4.0.0",
-		"eslint": "^9.14.0",
+		"@types/react": "^19.0.2",
+		"@types/react-dom": "^19.0.2",
+		"ci-info": "^4.1.0",
+		"eslint": "^9.17.0",
 		"gen-env-type-def": "^0.0.4",
 		"jest-image-snapshot": "^6.4.0",
-		"knip": "^5.36.2",
+		"knip": "^5.41.1",
 		"next-sitemap": "^4.2.3",
-		"prettier": "^3.3.3",
+		"prettier": "^3.4.2",
 		"puppeteer": "^23.6.1",
-		"typescript": "^5.6.3",
-		"vite-node": "^2.1.4",
-		"vitest": "^2.1.4"
+		"typescript": "^5.7.2",
+		"vite-node": "^2.1.8",
+		"vitest": "^2.1.8"
 	}
 }
