@@ -8,11 +8,11 @@
 		"postinstall": "pnpm prettier-config-generate"
 	},
 	"dependencies": {
-		"@chakra-ui/react": "^3.2.3",
+		"@chakra-ui/react": "^3.14.2",
 		"@emotion/react": "^11.14.0",
 		"@poolofdeath20/util": "^0.8.2",
 		"cors": "^2.8.5",
-		"next": "^15.1.2",
+		"next": "^15.2.4",
 		"next-seo": "^6.6.0",
 		"react": "^19.0.0",
 		"react-dom": "^19.0.0"
@@ -24,18 +24,18 @@
 		"@poolofdeath20/tsconfig": "^0.1.1",
 		"@types/cors": "^2.8.17",
 		"@types/jest-image-snapshot": "^6.4.0",
-		"@types/react": "^19.0.2",
-		"@types/react-dom": "^19.0.2",
-		"ci-info": "^4.1.0",
-		"eslint": "^9.17.0",
+		"@types/react": "^19.0.12",
+		"@types/react-dom": "^19.0.4",
+		"ci-info": "^4.2.0",
+		"eslint": "^9.23.0",
 		"gen-env-type-def": "^0.0.4",
 		"jest-image-snapshot": "^6.4.0",
-		"knip": "^5.41.1",
+		"knip": "^5.46.2",
 		"next-sitemap": "^4.2.3",
-		"prettier": "^3.4.2",
-		"puppeteer": "^23.6.1",
-		"typescript": "^5.7.2",
-		"vite-node": "^2.1.8",
-		"vitest": "^2.1.8"
+		"prettier": "^3.5.3",
+		"puppeteer": "^23.11.1",
+		"typescript": "^5.8.2",
+		"vite-node": "^3.0.9",
+		"vitest": "^3.0.9"
 	}
 }
