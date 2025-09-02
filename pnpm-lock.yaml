@@ -64,8 +64,8 @@ importers:
         specifier: ^9.34.0
         version: 9.34.0(jiti@2.5.1)
       gen-env-type-def:
-        specifier: ^0.0.4
-        version: 0.0.4
+        specifier: ^0.0.5
+        version: 0.0.5
       jest-image-snapshot:
         specifier: ^6.5.1
         version: 6.5.1
@@ -2597,8 +2597,8 @@ packages:
   functions-have-names@1.2.3:
     resolution: {integrity: sha512-xckBUXyTIqT97tq2x2AMb+g163b5JFysYk0x4qxNFwbfQkmNZoiRHb6sPzI9/QV33WeuvVYBUIiD4NzNIyqaRQ==}
 
-  gen-env-type-def@0.0.4:
-    resolution: {integrity: sha512-0HQ03HqImzbgrLvwTDZISXB+LTDY5MB9VQOSf6kOnCJIRcV8xTXifk8TvGCr6ya4NPApso7stwlYaO3IX+C96g==}
+  gen-env-type-def@0.0.5:
+    resolution: {integrity: sha512-EV1KrKPUgyl4dfj7S+FdYDmb5zzf12PvqXXHUXAUuVCXtsDg+m+Z9+rvud/23Z4CxUJTlIMl2wjpp7mcg1bbhA==}
 
   gensync@1.0.0-beta.2:
     resolution: {integrity: sha512-3hN7NaskYvMDLQY55gnW3NQ+mesEAepTqlg+VEbj7zzqEMBVNhzcGYYeqFo/TlYz6eQiFcp1HcsCZO+nGgS8zg==}
@@ -7220,7 +7220,7 @@ snapshots:
 
   functions-have-names@1.2.3: {}
 
-  gen-env-type-def@0.0.4: {}
+  gen-env-type-def@0.0.5: {}
 
   gensync@1.0.0-beta.2: {}
 
